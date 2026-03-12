@@ -12,15 +12,15 @@ const Part = (props) => {
 const Content = (props) => {
   return(
     <div>
-      <Part part = {props.part1} exercise = {props.exer1}/>
-      <Part part = {props.part2} exercise = {props.exer2}/>
-      <Part part = {props.part3} exercise = {props.exer3}/>
+      <Part part = {props.parts[0].name} exercise = {props.parts[0].exercises}/>
+      <Part part = {props.parts[1].name} exercise = {props.parts[1].exercises}/>
+      <Part part = {props.parts[2].name} exercise = {props.parts[2].exercises}/>
     </div>
   )
 }
 
 const Total = (props) => {
-  return (<p>Number of exercises {props.ex1 + props.ex2 + props.ex3}</p>)
+  return (<p>Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}</p>)
 }
 const App = () => {
   const course = { name:  'Half Stack application development',
@@ -43,8 +43,8 @@ const App = () => {
   return (
     <div>
       <Header course={course.name}/>
-      <Content part = {course.parts}/>
-      <Total part = {course.parts}/>
+      <Content parts = {course.parts}/>
+      <Total parts = {course.parts}/>
     </div>
   );
 }
