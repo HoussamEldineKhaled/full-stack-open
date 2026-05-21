@@ -8,6 +8,7 @@ const Button = (props) => (
   <button onClick={props.onClick}>{props.text}</button>
 )
 
+
 function App() {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
@@ -27,7 +28,7 @@ function App() {
     console.log("current value", newValue)
     setBad(newValue)
   }
-
+  const total = good + bad + neutral
 
   return (
   <div>
@@ -43,6 +44,9 @@ function App() {
     <p>good {good}</p>
     <p>neutral {neutral}</p>
     <p>bad {bad}</p>
+    <p>all {total}</p>
+    <p>average {(good - bad) / total}</p>
+    <p>positive {(good / total) * 100} %</p>
   </div>)
 }
 
