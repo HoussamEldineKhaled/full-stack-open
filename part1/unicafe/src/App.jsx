@@ -8,7 +8,9 @@ const Button = (props) => (
   <button onClick={props.onClick}>{props.text}</button>
 )
 
-
+const Statistics = (props) => (
+  <p></p>
+)
 function App() {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
