@@ -9,6 +9,9 @@ const Button = (props) => (
 )
 
 const Statistics = (props) => {
+  if (!props.good && !props.neutral && !props.bad){
+    return(<p>No feedback given</p>)
+  }
   return(
   <div>
     <p>good {props.good}</p>
