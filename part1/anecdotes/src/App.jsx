@@ -27,7 +27,8 @@ function App() {
 
   return (
     <div>
-      <Button onClick = {() => setSelected(anecdotes[selected])}/>
+      <p>{anecdotes[selected]}</p>
+      <Button onClick = {() => setSelected(selected + 1)} text = "next anecdote"/>
     </div>
   )
 }
