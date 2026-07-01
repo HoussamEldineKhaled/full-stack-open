@@ -31,17 +31,15 @@ function App() {
     const newVotes = [...voted]
     newVotes[selected] += 1
     setVoted(newVotes)
-    console.log(votes)
   }
-
   return (
     <div>
       <p>{anecdotes[selected]}</p>
       <div>
-        <Button onClick = {() => voteHandler} text = "vote"/>
+        <Button onClick = {voteHandler} text = "vote"/>
         <Button onClick = {() => setSelected(selected + 1)} text = "next anecdote"/>
       </div>
-      
+      <p>{voted[selected]}</p>
     </div>
   )
 }
