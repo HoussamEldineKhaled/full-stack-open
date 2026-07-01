@@ -27,11 +27,25 @@ function App() {
   const votes = Array(anecdotes.length).fill(0)
   
   const [voted, setVoted] = useState(votes)
+
   const voteHandler = () => {
     const newVotes = [...voted]
     newVotes[selected] += 1
     setVoted(newVotes)
   }
+
+  const findMax = (arr) => {
+    let bestIndex = 0
+    for (let i = 1; i < voted.length; i++){
+      if(arr[i] > arr[bestIndex]){
+        bestIndex = i
+      }
+    }
+    return bestIndex
+  }
+
+  const maxi = findMax(voted)
+
   return (
     <div>
       <h1>Anecdote of the day</h1>
@@ -42,7 +56,9 @@ function App() {
       </div>
       <p>has {voted[selected]} votes</p>
       <h1>Anecdote with most votes</h1>
-      
+      <p>{anecdotes[maxi]} has {voted[maxi]} votes</p>
+
+
     </div>
     
   )
