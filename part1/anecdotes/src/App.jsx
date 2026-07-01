@@ -34,13 +34,17 @@ function App() {
   }
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       <p>{anecdotes[selected]}</p>
       <div>
         <Button onClick = {voteHandler} text = "vote"/>
         <Button onClick = {() => setSelected(selected + 1)} text = "next anecdote"/>
       </div>
-      <p>{voted[selected]}</p>
+      <p>has {voted[selected]} votes</p>
+      <h1>Anecdote with most votes</h1>
+      
     </div>
+    
   )
 }
 
