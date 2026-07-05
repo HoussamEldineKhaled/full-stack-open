@@ -35,7 +35,7 @@ const Course = ({ course }) => {
 }
 
 const App = () => {
-  const course = { 
+  const course = [{ 
     id: 1,
     name:  'Half Stack application development',
     parts :[{
@@ -60,11 +60,30 @@ const App = () => {
       name: "Redux",
       exercises: 11
     }
+    ],
+
+  },
+  {
+    id: 2,
+    name: 'Node.js',
+    part: 
+    [
+      {
+        id: 1,
+        name: 'Routing',
+        exercises: 3
+      },
+      {
+        id: 2,
+        name: 'Middlewares',
+        exercises: 7
+      }
     ]
   }
+]
   return (
     <div>
-      <Course course={course}/>
+      {course.map(c => <Course key={c.id} course={c}/>)}
     </div>
   );
 }
