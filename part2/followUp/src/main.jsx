@@ -18,8 +18,9 @@ const notes = [
     important: true
   }]
 
-  const results = notes.map(note => notes.id)
+  const results = notes.map(note => notes.content)
   console.log(results)
+
 
 createRoot(document.getElementById('root')).render(
     <App notes = {notes}/>
