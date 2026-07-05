@@ -10,7 +10,7 @@ const notes = [
   {
     id: 2,
     content: 'Browser can execute only Javascript',
-    import: true
+    important: true
   }, 
   {
     id: 3,
