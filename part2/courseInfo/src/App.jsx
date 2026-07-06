@@ -9,12 +9,10 @@ const Part = (props) => {
   return(<p> {props.part} {props.exercise}</p>)
 }
 
-const Content = (props) => {
+const Content = ({ parts }) => {
   return(
     <div>
-      <Part part = {props.parts[0].name} exercise = {props.parts[0].exercises}/>
-      <Part part = {props.parts[1].name} exercise = {props.parts[1].exercises}/>
-      <Part part = {props.parts[2].name} exercise = {props.parts[2].exercises}/>
+      {parts.map(pa =>(<div>{<Part key={pa.id} part = {pa.name} exercise = {pa.exercises}/>}</div>) )}
     </div>
   )
 }
@@ -66,7 +64,7 @@ const App = () => {
   {
     id: 2,
     name: 'Node.js',
-    part: 
+    parts: 
     [
       {
         id: 1,
