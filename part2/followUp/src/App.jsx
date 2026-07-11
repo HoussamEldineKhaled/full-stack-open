@@ -4,7 +4,13 @@ import viteLogo from './assets/vite.svg'
 import Note from './components/note'
 
 
-function App({ notes }) {
+function App(props) {
+  const [notes, setNotes] = useState(props.notes)
+  const addNote = (event) => {
+    event.preventDefault()
+    console.log()
+  }
+
   return (
     <div>
       <h1>Notes</h1>
