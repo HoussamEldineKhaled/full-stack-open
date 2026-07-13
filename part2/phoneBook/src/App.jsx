@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
 
 function App() {
@@ -12,7 +10,16 @@ function App() {
   return (
     <div>
       <h2>Phonebook</h2>
-      
+      <form>
+        <div>
+          name : <input/> 
+        </div>
+        <div>
+          <button type='submit'>Add</button>
+        </div>
+      </form>
+      <h2>Numbers</h2>
+
     </div>
   )
 }
