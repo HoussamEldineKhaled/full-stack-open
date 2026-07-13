@@ -8,7 +8,7 @@ function App(props) {
   const [notes, setNotes] = useState(props.notes)
   const [newNote, setNewNote] = useState('a new note...')
   const [showAll, setShowAll] = useState(true)
-  const notesToShow = showAll ? notes : notes.filter(note => note.important === true)
+  const notesToShow = showAll ? notes : notes.filter(note => note.important)
 
   const addNote = (event) => {
     event.preventDefault()
@@ -36,7 +36,7 @@ function App(props) {
       </ul>
       <form onSubmit={addNote}>
         <input value={newNote} onChange={handleNoteChange}/>
-        <button type='submit'>Save</button>
+        <button type='submit' onClick={() => setShowAll(!showAll)}>{showAll ? 'important': 'all'}</button>
       </form>
     </div>
     )
