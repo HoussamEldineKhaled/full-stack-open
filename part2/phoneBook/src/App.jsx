@@ -7,10 +7,12 @@ import './App.css'
 function App() {
   const [persons, setPersons] = useState([{name: 'Arlo Helas'}])
   const [newNames, setNewNames] = useState('')
-  
+
 
   return (
     <div>
+      <h2>Phonebook</h2>
+      
     </div>
   )
 }
