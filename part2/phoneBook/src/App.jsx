@@ -3,7 +3,10 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [persons, setPersons] = useState([{id: 1, name: 'Arlo Helas', number: '70-246-578'}])
+  const [persons, setPersons] = useState([
+    {id: 1, name: 'Arlo Helas', number: '70-246-578'}, 
+    {id: 2, name: 'Arturo Yonas', number: '80-987-333'}, 
+    {id: 3, name: 'Alberto Margarette', number: '90-566-3456'}])
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
 
@@ -47,11 +50,11 @@ function App() {
     console.log("Added")
   }
 
-
-
   return (
     <div>
       <h2>Phonebook</h2>
+      <div>filter shown with: <input /></div>
+      <h2>add a new</h2>
       <form>
         <div>
           name : <input value={newName} onChange={handleNameChange}/> 
