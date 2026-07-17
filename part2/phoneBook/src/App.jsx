@@ -13,19 +13,24 @@ function App() {
 
   const addName = (event) => {
     event.preventDefault()
+
+    const ifExists = persons.some((person) => person.name === newNames)
+
+    if (ifExists){
+      alert(`${newNames} is already added to phonebook`)
+      setNewNames("")
+      return;
+    }
+
     const newPerson = {
       id: persons.length + 1,
       name: newNames
     }
-    persons.forEach((person) => {
-      if(person.name === newNames){
-        alert(`${newNames} is already added to phonebook`)
-        return;
-      } else {
-        setPersons(persons.concat(newPerson))
-        console.log("Added")
-      }
-    })
+
+    
+
+    setPersons(persons.concat(newPerson))
+    console.log("Added")
   }
 
   return (
