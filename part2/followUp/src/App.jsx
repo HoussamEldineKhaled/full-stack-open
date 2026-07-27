@@ -28,6 +28,10 @@ function App() {
       important: Math.random() < 0.5,
       id: String(notes.length + 1)
     }
+    axios.post('http://localhost:3001/notes').then(response => {
+      console.log(response)
+    })
+    
     setNotes(notes.concat(noteObject))
     setNewNote('')
     console.log('button clicked', event.target)
