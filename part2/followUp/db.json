@@ -16,46 +16,19 @@
       "important": true
     },
     {
-      "id": "kWnVosi9g0w"
+      "content": "john doe",
+      "important": true,
+      "id": "RR9yOWM5F3U"
     },
     {
-      "id": "LVrEyBpeikQ"
+      "content": "john doedoe",
+      "important": false,
+      "id": "Odfu8od9_vM"
     },
     {
-      "id": "gLnK6ycE_X8"
-    },
-    {
-      "id": "lBFp04g0L9Y"
-    },
-    {
-      "id": "0K9pYAWJ9Q4"
-    },
-    {
-      "id": "dIrDxofd-Oc"
-    },
-    {
-      "id": "CX6Kdy36KB8"
-    },
-    {
-      "id": "9Kpcu23N3To"
-    },
-    {
-      "id": "nWLruFZBsBo"
-    },
-    {
-      "id": "flYO_PwDpUo"
-    },
-    {
-      "id": "049Vq8A315g"
-    },
-    {
-      "id": "Ex3YEUejGy4"
-    },
-    {
-      "id": "2eYwsE2fHdg"
-    },
-    {
-      "id": "vgAHwen5OEw"
+      "content": "",
+      "important": false,
+      "id": "vcnqbu9E2vs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
