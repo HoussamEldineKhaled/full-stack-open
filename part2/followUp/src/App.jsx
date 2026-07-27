@@ -11,6 +11,9 @@ function App() {
   const [showAll, setShowAll] = useState(true)
   const notesToShow = showAll ? notes : notes.filter(note => note.important)
 
+  const togglrImportanceof = (id) => {
+    console.log('Importance of ' + id + ' needs to be toggled')
+  }
   useEffect(() => {
     console.log('effect')
     axios.get('http://localhost:3001/notes').then(response => {
@@ -24,7 +27,6 @@ function App() {
   const addNote = (event) => {
     event.preventDefault()
     const noteObject = {
-      id: String(notes.length + 1),
       content: newNote,
       important: Math.random() < 0.5
     }
