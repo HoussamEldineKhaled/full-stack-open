@@ -11,8 +11,8 @@ function App() {
   const notesToShow = showAll ? notes : notes.filter(note => note.important)
 
   useEffect(() => {
-    noteService.getAll().then(response => {
-      setNotes(response.data)
+    noteService.getAll().then(initialNotes => {
+      setNotes(initialNotes)
     })
   }, [])
 
@@ -20,8 +20,8 @@ function App() {
     const note = notes.find(n => n.id === id)
     const changeNote = {...note, important: !note.important}
 
-      noteService.update(id, changeNote).then(response => {
-        setNotes(notes.map(note => note.id === id ? response.data : note))
+      noteService.update(id, changeNote).then(returnedNote => {
+        setNotes(notes.map(note => note.id === id ? returnedNote : note))
     })
   }
 
@@ -33,8 +33,8 @@ function App() {
       content: newNote,
       important: Math.random() < 0.5
     }
-      noteService.create(noteObject).then(response => {
-        setNotes(notes.concat(response.data))
+      noteService.create(noteObject).then(returnedNote => {
+        setNotes(notes.concat(returnedNote))
         setNewNote('')
       })
     
