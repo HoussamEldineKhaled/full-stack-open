@@ -1,6 +1,4 @@
 import { useState , useEffect} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import Note from './components/note'
 import axios from 'axios'
 
@@ -11,8 +9,13 @@ function App() {
   const [showAll, setShowAll] = useState(true)
   const notesToShow = showAll ? notes : notes.filter(note => note.important)
 
-  const togglrImportanceof = (id) => {
-    console.log('Importance of ' + id + ' needs to be toggled')
+  const toggleImportanceof = (id) => {
+    const url = `http://localhost:3001/notes/${id}`
+    const note = notes.find(n => n.id === id)
+    const changeNote = {...note, important: !note.important}
+    axios.put(url, changeNote).then(response => {
+      setNotes(notes.map(note => note.id === id ? response.data : note))
+    })
   }
   useEffect(() => {
     console.log('effect')
@@ -46,7 +49,7 @@ function App() {
       <h1>Notes</h1>
       <ul>
         {notesToShow.map(note =>
-          <Note key={note.id} note={note}/>
+          <Note key={note.id} note={note} toggleImportance={() => {toggleImportanceof(note.id)}}/>
         )}
       </ul>
       <form onSubmit={addNote}>
