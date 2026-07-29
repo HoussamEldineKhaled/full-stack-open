@@ -1,4 +1,4 @@
-
+import axios from 'axios'
 
 const PersonForm = ({persons,filteredPersons ,newName, newNumber, setNewName, setNewNumber, setPersons, setFilteredPersons}) => {
     
@@ -18,6 +18,7 @@ const PersonForm = ({persons,filteredPersons ,newName, newNumber, setNewName, se
     const ifNameExists = persons.some((person) => person.name === newName)
     const ifNumberExists = persons.some((person) => person.number === newNumber)
 
+
     if (ifNameExists){
         alert(`${newName} is already added to phonebook`)
         setNewName('')
@@ -33,14 +34,16 @@ const PersonForm = ({persons,filteredPersons ,newName, newNumber, setNewName, se
     }
 
     const newPerson = {
-        id: persons.length + 1,
         name: newName,
-        number: newNumber
+        number: newNumber,
+        id: persons.length + 1
     }
 
-    setPersons(persons.concat(newPerson))
-    setFilteredPersons(filteredPersons.concat(newPerson))
-    console.log("Added")
+    axios.post('http://localhost:3001/persons', newPerson).then(response => {
+        setPersons(persons.concat(newPerson))
+        setFilteredPersons(filteredPersons.concat(newPerson))
+        console.log('added')
+    })
     }
 
     return(<>
